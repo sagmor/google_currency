@@ -111,6 +111,10 @@ class Money
         data.gsub!(/rhs:/, '"rhs":')
         data.gsub!(/error:/, '"error":')
         data.gsub!(/icc:/, '"icc":')
+
+        #Ugly fix to non-valid encoding...
+        data.force_encoding("ascii-8bit").encode('utf-8', :invalid => :replace, :undef => :replace, :replace => "")
+        
         data.gsub!(/(\\x..|\240)/, '')
 
         MultiJson.decode(data)
