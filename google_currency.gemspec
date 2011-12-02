@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency "json", ">= 1.4.0"
   s.add_development_dependency "yajl-ruby", ">= 1.0.0"
 
-  s.add_dependency "money", "~> 4.0.0"
+  s.add_dependency "money", ">= 3.5"
   s.add_dependency "multi_json", ">= 1.0.0"
 
   s.files =  Dir.glob("{lib,spec}/**/*")
